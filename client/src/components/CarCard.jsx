@@ -9,9 +9,9 @@ const CarCard = ({car}) => {
     const navigate = useNavigate()
 
   return (
-    <div onClick={()=> {navigate(`/car-details/${car._id}`); scrollTo(0,0)}} className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer'>
+    <div onClick={()=> {navigate(`/car-details/${car._id}`); scrollTo(0,0)}} className='group overflow-hidden rounded-lg border border-borderColor bg-white shadow-[0_18px_45px_rgba(17,24,39,0.08)] transition-all duration-500 cursor-pointer hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_24px_55px_rgba(249,115,22,0.18)]'>
       
-      <div className='relative h-48 overflow-hidden bg-gray-200'> 
+      <div className='relative h-48 overflow-hidden bg-asphalt'> 
         <img 
           src={car.image || fallbackCarImage(car)}
           alt="Car Image" 
@@ -19,9 +19,9 @@ const CarCard = ({car}) => {
           onError={(event) => handleCarImageError(event, car)}
         />
 
-        {car.isAvaliable && <p className='absolute top-4 left-4 bg-primary/90 text-white text-xs px-2.5 py-1 rounded-full'>Available Now</p>}
+        {car.isAvaliable && <p className='absolute top-4 left-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-orange-950/20'>Available Now</p>}
 
-        <div className='absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-lg'>
+        <div className='absolute bottom-4 right-4 rounded-lg bg-asphalt/90 px-3 py-2 text-white shadow-lg backdrop-blur-sm'>
             <span className='font-semibold'>{currency}{car.pricePerDay}</span>
             <span className='text-sm text-white/80'> / day</span>
         </div>
@@ -30,7 +30,7 @@ const CarCard = ({car}) => {
       <div className='p-4 sm:p-5'>
         <div className='flex justify-between items-start mb-2'>
             <div>
-                <h3 className='text-lg font-medium'>{car.brand} {car.model}</h3>
+                <h3 className='text-lg font-semibold text-asphalt'>{car.brand} {car.model}</h3>
                 <p className='text-muted-foreground text-sm'>{car.category} • {car.year}</p>
             </div>
         </div>

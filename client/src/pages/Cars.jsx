@@ -65,18 +65,21 @@ const Cars = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
 
-      className='flex flex-col items-center py-20 bg-light max-md:px-4'>
-        <Title title='Available Cars' subTitle='Browse our selection of premium vehicles available for your next adventure'/>
+      className='relative overflow-hidden flex flex-col items-center py-20 bg-[linear-gradient(180deg,#e9f6ff_0%,#fff4e6_100%)] max-md:px-4'>
+        <div className='absolute inset-x-0 bottom-0 h-20 bg-[linear-gradient(165deg,transparent_0_35%,rgba(249,115,22,0.16)_35%_50%,rgba(17,24,39,0.08)_50%_100%)]' />
+        <div className='relative'>
+          <Title title='Available Cars' subTitle='Browse our selection of premium vehicles available for your next adventure'/>
+        </div>
 
         <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
 
-        className='flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full shadow'>
+        className='relative flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full border border-borderColor shadow-[0_18px_45px_rgba(17,24,39,0.08)]'>
           <img src={assets.search_icon} alt="" className='w-4.5 h-4.5 mr-2'/>
 
-          <input onChange={(e)=> setInput(e.target.value)} value={input} type="text" placeholder='Search by make, model, or features' className='w-full h-full outline-none text-gray-500'/>
+          <input onChange={(e)=> setInput(e.target.value)} value={input} type="text" placeholder='Search by make, model, or features' className='w-full h-full outline-none text-gray-600 placeholder:text-gray-400'/>
 
           <img src={assets.filter_icon} alt="" className='w-4.5 h-4.5 ml-2'/>
         </motion.div>

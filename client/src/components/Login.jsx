@@ -35,9 +35,9 @@ const Login = () => {
     }
 
   return (
-    <div onClick={()=> setShowLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-100 flex items-center text-sm text-gray-600 bg-black/50'>
+    <div onClick={()=> setShowLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-100 flex items-center text-sm text-gray-600 bg-asphalt/60 backdrop-blur-sm'>
 
-      <form onSubmit={onSubmitHandler} onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white">
+      <form onSubmit={onSubmitHandler} onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg border border-borderColor bg-white shadow-[0_24px_70px_rgba(17,24,39,0.24)]">
             <p className="text-2xl font-medium m-auto">
                 <span className="text-primary">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>
@@ -64,7 +64,7 @@ const Login = () => {
                     Create an account? <span onClick={() => setState("register")} className="text-primary cursor-pointer">click here</span>
                 </p>
             )}
-            <button className="bg-primary hover:bg-blue-800 transition-all text-white w-full py-2 rounded-md cursor-pointer">
+            <button className="bg-primary hover:bg-primary-dull transition-all text-white w-full py-2 rounded-md cursor-pointer shadow-lg shadow-orange-900/15">
                 {state === "register" ? "Create Account" : "Login"}
             </button>
         </form>
