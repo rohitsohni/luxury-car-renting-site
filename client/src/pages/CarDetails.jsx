@@ -51,7 +51,7 @@ const CarDetails = () => {
   return car ? (
     <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-16'>
 
-      <button onClick={()=> navigate(-1)} className='flex items-center gap-2 mb-6 text-gray-500 cursor-pointer'>
+      <button onClick={()=> navigate(-1)} className='flex items-center gap-2 mb-6 text-gray-500 cursor-pointer transition hover:text-primary'>
         <img src={assets.arrow_icon} alt="" className='rotate-180 opacity-65'/>
         Back to all cars
        </button>
@@ -69,14 +69,14 @@ const CarDetails = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
 
-              src={car.image || fallbackCarImage(car)} alt="" onError={(event) => handleCarImageError(event, car)} className='w-full h-auto md:max-h-100 object-cover rounded-xl mb-6 shadow-md'/>
+              src={car.image || fallbackCarImage(car)} alt="" onError={(event) => handleCarImageError(event, car)} className='w-full h-auto md:max-h-100 object-cover rounded-lg mb-6 border border-borderColor shadow-[0_22px_60px_rgba(17,24,39,0.14)]'/>
               <motion.div className='space-y-6'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               >
                 <div>
-                  <h1 className='text-3xl font-bold'>{car.brand} {car.model}</h1>
+                  <h1 className='text-3xl font-bold text-asphalt'>{car.brand} {car.model}</h1>
                   <p className='text-gray-500 text-lg'>{car.category} • {car.year}</p>
                 </div>
                 <hr className='border-borderColor my-6'/>
@@ -93,7 +93,7 @@ const CarDetails = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
                     
-                    key={text} className='flex flex-col items-center bg-light p-4 rounded-lg'>
+                    key={text} className='flex flex-col items-center rounded-lg border border-borderColor bg-light p-4 text-asphalt shadow-sm'>
                       <img src={icon} alt="" className='h-5 mb-2'/>
                       {text}
                     </motion.div>
@@ -130,25 +130,25 @@ const CarDetails = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
 
-          onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
+          onSubmit={handleSubmit} className='h-max sticky top-18 rounded-lg border border-borderColor bg-white p-6 space-y-6 text-gray-500 shadow-[0_22px_60px_rgba(17,24,39,0.12)]'>
 
-            <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per day</span></p> 
+            <p className='flex items-center justify-between text-2xl text-asphalt font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per day</span></p> 
 
             <hr className='border-borderColor my-6'/>
 
             <div className='flex flex-col gap-2'>
               <label htmlFor="pickup-date">Pickup Date</label>
               <input value={pickupDate} onChange={(e)=>setPickupDate(e.target.value)}
-              type="date" className='border border-borderColor px-3 py-2 rounded-lg' required id='pickup-date' min={new Date().toISOString().split('T')[0]}/>
+              type="date" className='border border-borderColor px-3 py-2 rounded-lg outline-primary' required id='pickup-date' min={new Date().toISOString().split('T')[0]}/>
             </div>
 
             <div className='flex flex-col gap-2'>
               <label htmlFor="return-date">Return Date</label>
               <input value={returnDate} onChange={(e)=>setReturnDate(e.target.value)}
-              type="date" className='border border-borderColor px-3 py-2 rounded-lg' required id='return-date'/>
+              type="date" className='border border-borderColor px-3 py-2 rounded-lg outline-primary' required id='return-date'/>
             </div>
 
-            <button className='w-full bg-primary hover:bg-primary-dull transition-all py-3 font-medium text-white rounded-xl cursor-pointer'>Book Now</button>
+            <button className='w-full bg-primary hover:bg-primary-dull transition-all py-3 font-semibold text-white rounded-lg cursor-pointer shadow-lg shadow-orange-900/15'>Book Now</button>
 
             <p className='text-center text-sm'>No credit card required to reserve</p>
 

@@ -6,9 +6,24 @@
   font-family: "Outfit", sans-serif;
 }
 
+body {
+  color: #111827;
+  background:
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.12), transparent 30rem),
+    linear-gradient(180deg, #f7fbff 0%, #fff8ef 44%, #ffffff 100%);
+}
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
 @theme {
-  --color-primary: #2563EB;
-  --color-primary-dull: #1F58D8;
-  --color-light: #F1F5F9;
-  --color-borderColor: #c4c7d2;
+  --color-primary: #F97316;
+  --color-primary-dull: #C2410C;
+  --color-light: #FFF4E6;
+  --color-borderColor: #E7D5BF;
+  --color-asphalt: #111827;
+  --color-skyline: #0F4C81;
 }
