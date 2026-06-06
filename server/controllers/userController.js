@@ -11,11 +11,24 @@ const indianLocationByOldCity = {
     "Houston": "Hyderabad",
 };
 
+const indianLocationByStarterCar = {
+    "Toyota:Camry": "Mumbai",
+    "BMW:X5": "Delhi",
+    "Mercedes:E-Class": "Bengaluru",
+    "Ford:Explorer": "Hyderabad",
+    "Audi:A4": "Chennai",
+    "Tesla:Model 3": "Kolkata",
+};
+
 const withIndianLocation = (car) => {
     const normalizedCar = typeof car.toObject === "function" ? car.toObject() : car;
+    const starterKey = `${normalizedCar.brand}:${normalizedCar.model}`;
     return {
         ...normalizedCar,
-        location: indianLocationByOldCity[normalizedCar.location] || normalizedCar.location,
+        location:
+            indianLocationByStarterCar[starterKey] ||
+            indianLocationByOldCity[normalizedCar.location] ||
+            normalizedCar.location,
     };
 };
 
