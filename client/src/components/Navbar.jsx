@@ -44,7 +44,7 @@ const Navbar = () => {
 
             <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
 
-                <button onClick={()=> isOwner ? navigate('/owner') : changeRole()} className="cursor-pointer font-medium transition hover:text-primary">{isOwner ? 'Dashboard' : 'List cars'}</button>
+                <button onClick={()=> isOwner ? navigate('/owner') : changeRole()} className="cursor-pointer font-medium transition hover:text-primary">{isOwner ? 'Dashboard' : 'Become a Owner'}</button>
 
                 <button onClick={()=> {user ? logout() : setShowLogin(true)}} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg shadow-lg shadow-orange-900/15">{user ? 'Logout' : 'Login'}</button>
             </div>
