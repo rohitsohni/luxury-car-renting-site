@@ -96,14 +96,34 @@ const ManageCars = () => {
                 <td className='p-3'>{currency}{car.pricePerDay}/day</td>
 
                 <td className='p-3 max-md:hidden'>
-                  <span className={`px-3 py-1 rounded-full text-xs ${car.isAvaliable ? 'bg-green-100 text-green-500' : 'bg-red-100 text-red-500'}`}>
+                  <button
+                    type="button"
+                    onClick={() => toggleAvailability(car._id)}
+                    aria-label={`Mark ${car.brand} ${car.model} as ${car.isAvaliable ? 'unavailable' : 'available'}`}
+                    className={`inline-flex min-w-24 items-center justify-center rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                      car.isAvaliable
+                        ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
                     {car.isAvaliable ? "Available" : "Unavailable" }
-                  </span>
+                  </button>
                 </td>
 
-                <td className='flex items-center p-3'>
+                <td className='flex items-center gap-3 p-3'>
 
-                  <img onClick={()=> toggleAvailability(car._id)} src={car.isAvaliable ? assets.eye_close_icon : assets.eye_icon} alt="" className='cursor-pointer'/>
+                  <button
+                    type="button"
+                    onClick={() => toggleAvailability(car._id)}
+                    aria-label={`Mark ${car.brand} ${car.model} as ${car.isAvaliable ? 'unavailable' : 'available'}`}
+                    className={`hidden min-w-24 items-center justify-center rounded-full px-3 py-1.5 text-xs font-semibold transition max-md:inline-flex ${
+                      car.isAvaliable
+                        ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {car.isAvaliable ? "Available" : "Unavailable" }
+                  </button>
 
                   <img onClick={()=> deleteCar(car._id)} src={assets.delete_icon} alt="" className='cursor-pointer'/>
                 </td>
