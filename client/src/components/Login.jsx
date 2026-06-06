@@ -43,17 +43,20 @@ const Login = () => {
             </p>
             {state === "register" && (
                 <div className="w-full">
-                    <p>Name</p>
+                    <p>Username</p>
                     <input onChange={(e) => setName(e.target.value)} value={name} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="text" required />
+                    <p className="mt-1 text-xs leading-5 text-gray-400">Use 2-30 characters, such as your first name or display name.</p>
                 </div>
             )}
             <div className="w-full ">
                 <p>Email</p>
                 <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="email" required />
+                {state === "register" && <p className="mt-1 text-xs leading-5 text-gray-400">Enter an active email address for account access.</p>}
             </div>
             <div className="w-full ">
                 <p>Password</p>
                 <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="password" required />
+                {state === "register" && <p className="mt-1 text-xs leading-5 text-gray-400">Use at least 8 characters with letters and numbers.</p>}
             </div>
             {state === "register" ? (
                 <p>
