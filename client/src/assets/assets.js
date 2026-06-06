@@ -41,7 +41,7 @@ import car_image3 from "./car_image3.png"
 import car_image4 from "./car_image4.png"
 import hero_orange_car_bg from "./generated/hero-orange-car-bg.jpg"
 
-export const cityList = ['New York', 'Los Angeles', 'Houston', 'Chicago']
+export const cityList = ['Mumbai', 'Delhi', 'Bengaluru', 'Hyderabad', 'Chennai', 'Kolkata']
 
 export const assets = {
     logo,
@@ -122,7 +122,7 @@ export const dummyCarData = [
         "fuel_type": "Petrol",
         "transmission": "Automatic",
         "pricePerDay": 65,
-        "location": "New York",
+        "location": "Mumbai",
         "description": "A comfortable sedan with smooth handling, roomy seating, and great fuel economy for city drives and weekend trips.",
         "isAvaliable": true,
     },
@@ -138,7 +138,7 @@ export const dummyCarData = [
         "fuel_type": "Diesel",
         "transmission": "Automatic",
         "pricePerDay": 120,
-        "location": "Los Angeles",
+        "location": "Delhi",
         "description": "A premium SUV with a refined cabin, confident road presence, and plenty of space for passengers and luggage.",
         "isAvaliable": true,
     },
@@ -154,7 +154,7 @@ export const dummyCarData = [
         "fuel_type": "Hybrid",
         "transmission": "Automatic",
         "pricePerDay": 110,
-        "location": "Chicago",
+        "location": "Bengaluru",
         "description": "A luxury sedan with quiet performance, elegant interiors, and modern comfort features for longer journeys.",
         "isAvaliable": true,
     },
@@ -170,7 +170,7 @@ export const dummyCarData = [
         "fuel_type": "Gas",
         "transmission": "Automatic",
         "pricePerDay": 95,
-        "location": "Houston",
+        "location": "Hyderabad",
         "description": "A spacious seven-seat SUV built for family travel, airport runs, and road trips with extra cargo room.",
         "isAvaliable": true,
     },
@@ -186,7 +186,7 @@ export const dummyCarData = [
         "fuel_type": "Petrol",
         "transmission": "Semi-Automatic",
         "pricePerDay": 90,
-        "location": "New York",
+        "location": "Chennai",
         "description": "A sporty sedan with crisp steering, premium materials, and a polished drive for business or leisure rentals.",
         "isAvaliable": true,
     },
@@ -202,7 +202,7 @@ export const dummyCarData = [
         "fuel_type": "Electric",
         "transmission": "Automatic",
         "pricePerDay": 105,
-        "location": "Los Angeles",
+        "location": "Kolkata",
         "description": "An all-electric sedan with instant acceleration, a minimalist cabin, and excellent range for daily driving.",
         "isAvaliable": true,
     },
