@@ -4,6 +4,21 @@ import jwt from 'jsonwebtoken'
 import Car from "../models/Car.js";
 import { seedDatabase, starterCarKeys } from "../configs/seed.js";
 
+const indianLocationByOldCity = {
+    "New York": "Mumbai",
+    "Los Angeles": "Delhi",
+    "Chicago": "Bengaluru",
+    "Houston": "Hyderabad",
+};
+
+const withIndianLocation = (car) => {
+    const normalizedCar = typeof car.toObject === "function" ? car.toObject() : car;
+    return {
+        ...normalizedCar,
+        location: indianLocationByOldCity[normalizedCar.location] || normalizedCar.location,
+    };
+};
+
 
 // Generate JWT Token
 const generateToken = (userId)=>{
@@ -79,8 +94,9 @@ export const getCars = async (req, res) =>{
             .sort((a, b) => starterCarKeys.indexOf(`${a.brand}:${a.model}`) - starterCarKeys.indexOf(`${b.brand}:${b.model}`));
         const starterIds = new Set(starterCars.map((car) => car._id.toString()));
         const addedCars = cars.filter((car) => !starterIds.has(car._id.toString()));
+        const orderedCars = starterCars.length >= 6 ? [...starterCars.slice(0, 6), ...addedCars] : cars;
 
-        res.json({success: true, cars: starterCars.length >= 6 ? [...starterCars.slice(0, 6), ...addedCars] : cars})
+        res.json({success: true, cars: orderedCars.map(withIndianLocation)})
     } catch (error) {
         console.log(error.message);
         res.json({success: false, message: error.message})
