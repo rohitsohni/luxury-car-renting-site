@@ -103,7 +103,7 @@ const ManageCars = () => {
                     className={`inline-flex min-w-24 items-center justify-center rounded-full px-3 py-1.5 text-xs font-semibold transition ${
                       car.isAvaliable
                         ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-red-100 text-red-600 hover:bg-red-200'
                     }`}
                   >
                     {car.isAvaliable ? "Available" : "Unavailable" }
@@ -119,7 +119,7 @@ const ManageCars = () => {
                     className={`hidden min-w-24 items-center justify-center rounded-full px-3 py-1.5 text-xs font-semibold transition max-md:inline-flex ${
                       car.isAvaliable
                         ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-red-100 text-red-600 hover:bg-red-200'
                     }`}
                   >
                     {car.isAvaliable ? "Available" : "Unavailable" }
