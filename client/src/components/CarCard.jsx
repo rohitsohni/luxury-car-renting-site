@@ -19,7 +19,7 @@ const CarCard = ({car}) => {
           onError={(event) => handleCarImageError(event, car)}
         />
 
-        {car.isAvaliable && <p className='absolute top-4 left-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-orange-950/20'>Available Now</p>}
+        {car.isAvaliable && <p className='absolute top-4 left-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-emerald-950/20'>Available Now</p>}
 
         <div className='absolute bottom-4 right-4 rounded-lg bg-asphalt/90 px-3 py-2 text-white shadow-lg backdrop-blur-sm'>
             <span className='font-semibold'>{currency}{car.pricePerDay}</span>

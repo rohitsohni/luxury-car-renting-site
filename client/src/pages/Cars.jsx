@@ -79,9 +79,7 @@ const Cars = () => {
         className='relative flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full border border-borderColor shadow-[0_18px_45px_rgba(17,24,39,0.08)]'>
           <img src={assets.search_icon} alt="" className='w-4.5 h-4.5 mr-2'/>
 
-          <input onChange={(e)=> setInput(e.target.value)} value={input} type="text" placeholder='Search by make, model, or features' className='w-full h-full outline-none text-gray-600 placeholder:text-gray-400'/>
-
-          <img src={assets.filter_icon} alt="" className='w-4.5 h-4.5 ml-2'/>
+          <input onChange={(e)=> setInput(e.target.value)} value={input} type="text" aria-label='Search cars' className='w-full h-full outline-none text-gray-600'/>
         </motion.div>
       </motion.div>
 
