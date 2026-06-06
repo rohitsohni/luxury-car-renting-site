@@ -21,7 +21,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className='max-w-5xl text-5xl font-black leading-[0.95] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,0.55)] md:text-7xl lg:text-8xl'
         >
-          Luxury cars on Rent
+          Luxury Cars on Rent
         </motion.h1>
       </div>
     </motion.section>
