@@ -3,7 +3,7 @@ import { assets} from '../assets/assets'
 import Title from '../components/Title'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
-import { motion } from 'motion/react'
+import { motion as Motion } from 'motion/react'
 import { fallbackCarImage, handleCarImageError } from '../utils/carImage'
 
 const MyBookings = () => {
@@ -30,7 +30,7 @@ const MyBookings = () => {
   },[user])
 
   return (
-    <motion.div 
+    <Motion.div 
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
@@ -43,7 +43,7 @@ const MyBookings = () => {
 
        <div>
         {bookings.map((booking, index)=>(
-          <motion.div 
+          <Motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1, duration: 0.4 }}
@@ -94,11 +94,11 @@ const MyBookings = () => {
            </div>
 
 
-          </motion.div>
+          </Motion.div>
         ))}
        </div>
       
-    </motion.div>
+    </Motion.div>
   )
 }
 

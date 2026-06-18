@@ -3,7 +3,7 @@ import { assets, menuLinks } from '../assets/assets'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
-import {motion} from 'motion/react'
+import { motion as Motion } from 'motion/react'
 
 const Navbar = () => {
 
@@ -29,7 +29,7 @@ const Navbar = () => {
     }
 
   return (
-    <motion.div 
+    <Motion.div 
     initial={{y: -20, opacity: 0}}
     animate={{y: 0, opacity: 1}}
     transition={{duration: 0.5}}
@@ -54,7 +54,7 @@ const Navbar = () => {
             <img src={open ? assets.close_icon : assets.menu_icon} alt="menu" />
         </button>
       
-    </motion.div>
+    </Motion.div>
   )
 }
 

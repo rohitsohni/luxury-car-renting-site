@@ -5,7 +5,7 @@ import CarCard from '../components/CarCard'
 import { useSearchParams } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
-import { motion } from 'motion/react'
+import { motion as Motion } from 'motion/react'
 
 const Cars = () => {
 
@@ -60,7 +60,7 @@ const Cars = () => {
   return (
     <div>
 
-      <motion.div 
+      <Motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -71,7 +71,7 @@ const Cars = () => {
           <Title title='Available Cars' subTitle='Browse our selection of premium vehicles available for your next adventure'/>
         </div>
 
-        <motion.div
+        <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -80,10 +80,10 @@ const Cars = () => {
           <img src={assets.search_icon} alt="" className='w-4.5 h-4.5 mr-2'/>
 
           <input onChange={(e)=> setInput(e.target.value)} value={input} type="text" aria-label='Search cars' className='w-full h-full outline-none text-gray-600'/>
-        </motion.div>
-      </motion.div>
+        </Motion.div>
+      </Motion.div>
 
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.5 }}
@@ -93,16 +93,16 @@ const Cars = () => {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto'>
           {filteredCars.map((car, index)=> (
-            <motion.div key={index}
+            <Motion.div key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.4 }}
             >
               <CarCard car={car}/>
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
-      </motion.div>
+      </Motion.div>
 
     </div>
   )
