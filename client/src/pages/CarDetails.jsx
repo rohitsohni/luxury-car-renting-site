@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 import Loader from '../components/Loader'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
-import { motion } from 'motion/react'
+import { motion as Motion } from 'motion/react'
 import { fallbackCarImage, handleCarImageError } from '../utils/carImage'
 
 const isMongoObjectId = (value) => /^[a-f\d]{24}$/i.test(value)
@@ -58,19 +58,19 @@ const CarDetails = () => {
 
        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12'>
           {/* Left: Car Image & Details */}
-          <motion.div 
+          <Motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
 
           className='lg:col-span-2'>
-              <motion.img 
+              <Motion.img 
               initial={{ scale: 0.98, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
 
               src={car.image || fallbackCarImage(car)} alt="" onError={(event) => handleCarImageError(event, car)} className='w-full h-auto md:max-h-100 object-cover rounded-lg mb-6 border border-borderColor shadow-[0_22px_60px_rgba(17,24,39,0.14)]'/>
-              <motion.div className='space-y-6'
+              <Motion.div className='space-y-6'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -88,7 +88,7 @@ const CarDetails = () => {
                     {icon: assets.car_icon, text: car.transmission},
                     {icon: assets.location_icon, text: car.location},
                   ].map(({icon, text})=>(
-                    <motion.div 
+                    <Motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
@@ -96,7 +96,7 @@ const CarDetails = () => {
                     key={text} className='flex flex-col items-center rounded-lg border border-borderColor bg-light p-4 text-asphalt shadow-sm'>
                       <img src={icon} alt="" className='h-5 mb-2'/>
                       {text}
-                    </motion.div>
+                    </Motion.div>
                   ))}
                 </div>
 
@@ -121,11 +121,11 @@ const CarDetails = () => {
                   </ul>
                 </div>
 
-              </motion.div>
-          </motion.div>
+              </Motion.div>
+          </Motion.div>
 
           {/* Right: Booking Form */}
-          <motion.form 
+          <Motion.form 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -150,7 +150,7 @@ const CarDetails = () => {
 
             <button className='w-full bg-primary hover:bg-primary-dull transition-all py-3 font-semibold text-white rounded-lg cursor-pointer shadow-lg shadow-orange-900/15'>Book Now</button>
 
-          </motion.form>
+          </Motion.form>
        </div>
 
     </div>
