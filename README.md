@@ -1,4 +1,4 @@
-# Car Rental Full Stack App
+# Luxury Car Renting Site
 
 This project is a full-stack car rental application with a React/Vite frontend and an Express/MongoDB backend.
 
