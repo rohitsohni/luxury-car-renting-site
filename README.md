@@ -6,6 +6,10 @@ Full-stack car rental platform with customer booking flows, authentication, owne
 
 [Open Luxury Car Renting Site](https://car-rental-app-three.vercel.app)
 
+## Preview
+
+![Luxury Car Renting Site home page](docs/screenshots/live-demo.png)
+
 ## Project Highlights
 
 - Built a React/Vite frontend for browsing cars, filtering inventory, viewing car details, and managing bookings.
@@ -126,6 +130,10 @@ npm run reset:data
 npm run reset:empty
 npm run reset:demo
 ```
+
+## Quality Checks
+
+This repository includes a GitHub Actions CI workflow that installs dependencies, lints the frontend, builds the frontend, and verifies backend dependency installation on every push and pull request to `main`.
 
 ## Interview Notes
 
