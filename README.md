@@ -144,3 +144,7 @@ This repository includes a GitHub Actions CI workflow that installs dependencies
 - `server/server.js` mounts the API routes and handles database connection setup.
 - `server/models/Car.js`, `server/models/User.js`, and `server/models/Booking.js` define the core database structure.
 - `server/configs/seed.js` creates demo users and starter cars for empty databases.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
