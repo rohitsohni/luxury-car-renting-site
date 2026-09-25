@@ -30,31 +30,5 @@ Full-stack car rental platform with customer booking flows, authentication, owne
 | Media | ImageKit, Multer |
 | Deployment | Vercel frontend and Vercel serverless backend |
 
-## Folder Structure
 
-```text
-client/
-  src/
-    assets/        Static images, icons, and demo data
-    components/    Shared UI components
-    context/       App-wide state, API client, auth helpers
-    pages/         Public and owner dashboard pages
-server/
-  configs/         Database, ImageKit, and seed setup
-  controllers/     Route handler logic
-  middleware/      Auth and upload middleware
-  models/          Mongoose schemas
-  routes/          Express route definitions
-```
-
-## Main Features
-
-- Browse available rental cars
-- Search cars by brand, model, category, or transmission
-- View car details and booking form
-- Register, login, and load user profile data
-- Manage personal bookings
-- Owner dashboard for adding cars, managing listings, and reviewing bookings
-- Image upload support for car listings
-- Demo starter inventory for the Cars page
 
