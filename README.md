@@ -8,7 +8,7 @@ Full-stack car rental platform with customer booking flows, authentication, owne
 
 ## Preview
 
-![Luxury Car Renting Site home page](docs/screenshots/live-demo.png)
+<img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
 
 ## Project Highlights
 
