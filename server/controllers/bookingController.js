@@ -28,30 +28,6 @@ const hasOverlappingBooking = async (car, pickupDate, returnDate) => {
     return Boolean(booking);
 };
 
-export const checkAvailabilityOfCar = async (req, res) => {
-    try {
-        const { location, pickupDate, returnDate } = req.body;
-        const { pickup, dropoff, error } = toDateRange(pickupDate, returnDate);
-
-        if (error) return res.json({ success: false, message: error });
-
-        const cars = await Car.find({ location, isAvaliable: true });
-        const bookedCars = await Booking.distinct("car", {
-            car: { $in: cars.map((car) => car._id) },
-            status: { $ne: "cancelled" },
-            pickupDate: { $lte: dropoff },
-            returnDate: { $gte: pickup },
-        });
-        const bookedIds = new Set(bookedCars.map((id) => id.toString()));
-        const availableCars = cars.filter((car) => !bookedIds.has(car._id.toString()));
-
-        res.json({ success: true, availableCars });
-    } catch (error) {
-        console.log(error.message);
-        res.json({ success: false, message: error.message });
-    }
-};
-
 export const createBooking = async (req, res) => {
     try {
         const { car, pickupDate, returnDate } = req.body;

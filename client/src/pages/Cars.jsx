@@ -1,61 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import CarCard from '../components/CarCard'
-import { useSearchParams } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
-import toast from 'react-hot-toast'
 import { motion as Motion } from 'motion/react'
 
 const Cars = () => {
-
-  // getting search params from url
-  const [searchParams] = useSearchParams()
-  const pickupLocation = searchParams.get('pickupLocation')
-  const pickupDate = searchParams.get('pickupDate')
-  const returnDate = searchParams.get('returnDate')
-
-  const {cars, axios} = useAppContext()
+  const {cars} = useAppContext()
 
   const [input, setInput] = useState('')
+  const filteredCars = useMemo(() => {
+    if (input === '') return cars
 
-  const isSearchData = pickupLocation && pickupDate && returnDate
-  const [filteredCars, setFilteredCars] = useState(cars)
-
-  const applyFilter = async ()=>{
-     
-    if(input === ''){
-      setFilteredCars(cars)
-      return null
-    }
-
-    const filtered = cars.slice().filter((car)=>{
+    return cars.filter((car)=>{
       return car.brand.toLowerCase().includes(input.toLowerCase())
-      || car.model.toLowerCase().includes(input.toLowerCase())  
-      || car.category.toLowerCase().includes(input.toLowerCase())  
+      || car.model.toLowerCase().includes(input.toLowerCase())
+      || car.category.toLowerCase().includes(input.toLowerCase())
       || car.transmission.toLowerCase().includes(input.toLowerCase())
     })
-    setFilteredCars(filtered)
-  }
-
-  const searchCarAvailablity = async () =>{
-    const {data} = await axios.post('/api/bookings/check-availability', {location: pickupLocation, pickupDate, returnDate})
-    if (data.success) {
-      setFilteredCars(data.availableCars)
-      if(data.availableCars.length === 0){
-        toast('No cars available')
-      }
-      return null
-    }
-  }
-
-  useEffect(()=>{
-    isSearchData && searchCarAvailablity()
-  },[])
-
-  useEffect(()=>{
-    cars.length > 0 && !isSearchData && applyFilter()
-  },[input, cars])
+  }, [cars, input])
 
   return (
     <div>
