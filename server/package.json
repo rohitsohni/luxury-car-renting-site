@@ -6,10 +6,7 @@
   "type": "module",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js",
-    "reset:data": "node scripts/reset-cars.js",
-    "reset:empty": "node scripts/reset-cars.js --empty-cars",
-    "reset:demo": "node scripts/reset-cars.js --with-demo-user"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
