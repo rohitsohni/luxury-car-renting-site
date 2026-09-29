@@ -8,7 +8,6 @@ This is a full-stack car-rental website where customers can browse and book cars
 
 <br>
 <br>
-<br> 
 
 There are two parts:
 
