@@ -1,16 +1,17 @@
-# Luxury Car Renting Site
+<div align="center">
+  <h1>Luxury Car Renting Site</h1>
+  <p><strong>A full-stack car-rental platform for customers and owners.</strong></p>
+  <a href="https://car-rental-app-three.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo-Open_Site-E85D04?style=for-the-badge&logo=vercel&logoColor=white" alt="Open Live Demo" />
+  </a>
+  <br><br>
+  <img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
+</div>
 
 ## Project overview
 
 This is a full-stack car-rental website where customers can browse and book cars, while owners can add cars and manage their bookings.
 
-<img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
-
-<br>
-<br>
-
-### Live Demo    [Open Luxury Car Renting Site](https://car-rental-app-three.vercel.app)
-<br>
 There are two parts:
 
 ```text
