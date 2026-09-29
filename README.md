@@ -1,4 +1,4 @@
-# Luxury Car Renting Site - Simple Summary
+# Luxury Car Renting Site
 
 ## Project overview
 
