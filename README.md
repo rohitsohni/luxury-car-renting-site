@@ -2,7 +2,7 @@
   <h1>Luxury Car Renting Site</h1>
   <p><strong>A full-stack car-rental platform for customers and owners.</strong></p>
   <a href="https://car-rental-app-three.vercel.app">
-    <img src="https://img.shields.io/badge/Open_Site-E85D04?style=for-the-badge&logo=vercel&logoColor=white" alt="Open Site" />
+    <img src="https://img.shields.io/badge/Open-Site-E85D04?style=for-the-badge&labelColor=2563EB" alt="Open Site" />
   </a>
   <br><br>
   <img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
