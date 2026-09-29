@@ -9,7 +9,7 @@ This is a full-stack car-rental website where customers can browse and book cars
 <br>
 <br>
 
-## Live Demo    [Open Luxury Car Renting Site](https://car-rental-app-three.vercel.app)
+### Live Demo    [Open Luxury Car Renting Site](https://car-rental-app-three.vercel.app)
 <br>
 There are two parts:
 
