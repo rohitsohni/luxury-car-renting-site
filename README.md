@@ -1,156 +1,259 @@
-# Luxury Car Renting Site
+# Luxury Car Renting Site - Simple Summary
 
-A full-stack car rental platform where customers can discover and book vehicles, while owners manage inventory, reservations, availability, and revenue from a dedicated dashboard.
+## Project overview
 
-## Live Demo
+This is a full-stack car-rental website where customers can browse and book cars, while owners can add cars and manage their bookings.
 
-[Open Luxury Car Renting Site](https://car-rental-app-three.vercel.app)
+There are two parts:
 
-## Preview
+```text
+client -> frontend
+server -> backend
+```
 
-<img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
-
-## Features
-
-### Customer
-
-- Register, log in, and log out securely.
-- Browse and search the available car catalog.
-- View vehicle details and select pickup and return dates.
-- Book a car and review previous bookings.
-
-### Owner
-
-- Access a dedicated owner dashboard.
-- Add cars and upload vehicle images.
-- View, update the availability of, or delete listed cars.
-- Review customer bookings and confirm or cancel reservations.
-- Track monthly revenue and update the owner profile image.
-
-## Tech Stack
+## Technologies
 
 ### Frontend
 
-- **React** - component-based user interface
-- **Tailwind CSS** - styling and responsive layouts
-- **React Router** - client-side navigation
-- **Axios** - API requests
-- **Context API** - shared application state
-- **Motion** - interface animations
-- **Vite** - development and production builds
+- React - builds the interface
+- Tailwind CSS - styling
+- React Router - page navigation
+- Axios - sends requests to backend
+- Context API - stores shared data
+- Motion - animations
+- Vite - runs and builds frontend
 
 ### Backend
 
-- **Node.js and Express** - REST API server
-- **MongoDB and Mongoose** - data storage and modeling
-- **JWT** - authentication and protected routes
-- **bcrypt** - password hashing
-- **Multer** - image upload handling
-- **ImageKit** - cloud image storage
+- Node.js and Express - API server
+- MongoDB - database
+- Mongoose - works with MongoDB
+- JWT - login authentication
+- bcrypt - password security
+- Multer - receives uploaded files
+- ImageKit - stores images online
 
-## Project Structure
+## Customer features
+
+A customer can:
+
+- Register
+- Log in
+- Browse cars
+- Search cars
+- View car details
+- Choose rental dates
+- Book a car
+- View previous bookings
+- Log out
+
+## Owner features
+
+An owner can:
+
+- Access the owner dashboard
+- Add new cars
+- Upload car images
+- View their listed cars
+- Make cars available or unavailable
+- Delete cars
+- View customer bookings
+- Confirm or cancel bookings
+- View monthly revenue
+- Update their profile image
+
+## Frontend structure
 
 ```text
-client/
-├── src/
-│   ├── assets/       # Images, icons, links, and sample cars
-│   ├── components/   # Reusable UI components
-│   ├── context/      # Shared application state
-│   ├── pages/        # Customer and owner pages
-│   ├── utils/        # Helper functions
-│   ├── App.jsx       # Routes and page composition
-│   └── index.css     # Global styles and theme
-
-server/
-├── configs/          # MongoDB and ImageKit configuration
-├── controllers/      # Business logic
-├── middleware/       # Authentication and file uploads
-├── models/           # Mongoose data models
-├── routes/           # API routes
-└── server.js         # Express application entry point
+App.jsx -> controls pages and routes
+AppContext.jsx -> stores shared user, car, token, and API data
+pages/ -> complete website pages
+components/ -> reusable interface pieces
+assets/ -> images, icons, links, and sample cars
+utils/ -> helper functions
+index.css -> global styles and project colors
 ```
 
-### Main Pages
+Important pages:
 
-| Page | Purpose |
-| --- | --- |
-| Home | Landing page and featured content |
-| Cars | Vehicle catalog and search |
-| Car Details | Vehicle information and booking form |
-| My Bookings | Customer booking history |
-| Dashboard | Owner statistics and revenue |
-| Add Car | New vehicle form |
-| Manage Cars | Owner inventory management |
-| Manage Bookings | Reservation management |
+```text
+Home -> home page
+Cars -> car list and search
+CarDetails -> selected car and booking form
+MyBookings -> customer booking history
+Dashboard -> owner statistics
+AddCar -> new-car form
+ManageCars -> owner car management
+ManageBookings -> owner booking management
+```
 
-### Important Components
+Important components:
 
-- **Navbar** - customer navigation
-- **Login** - registration and login dialog
-- **Hero** - home page banner
-- **CarCard** - individual vehicle preview
-- **Title** - reusable section heading
-- **Loader** - loading indicator
-- **Sidebar** - owner dashboard navigation
+```text
+Navbar -> customer navigation
+Login -> login and registration popup
+Hero -> home-page banner
+CarCard -> displays one car
+Title -> reusable page heading
+Loader -> loading spinner
+Sidebar -> owner navigation
+```
 
-## Data Models
+## Backend structure
+
+```text
+server.js -> starts Express and connects everything
+routes/ -> defines API URLs
+controllers/ -> contains business logic
+models/ -> defines database structure
+middleware/ -> authentication and file uploads
+configs/ -> MongoDB, ImageKit, and demo-data setup
+```
+
+## Database models
 
 ### User
 
-Stores the user's name, email, hashed password, role, and profile image. A user can have either the `user` or `owner` role.
+Stores:
+
+```text
+name
+email
+hashed password
+role
+profile image
+```
+
+The role is either user or owner.
 
 ### Car
 
-Stores the owner, brand, model, image, year, category, seating capacity, fuel type, transmission, daily price, location, description, and availability.
+Stores:
+
+```text
+owner
+brand
+model
+image
+year
+category
+seats
+fuel type
+transmission
+daily price
+location
+description
+availability
+```
 
 ### Booking
 
-Stores the car, customer, owner, pickup date, return date, status, and total price. Booking status can be `pending`, `confirmed`, or `cancelled`.
-
-## Application Flow
+Stores:
 
 ```text
-React user action
-      ↓
-Axios API request
-      ↓
-Express route
-      ↓
-JWT authentication (when required)
-      ↓
-Controller business logic
-      ↓
+car
+customer
+owner
+pickup date
+return date
+status
+total price
+```
+
+Booking status can be:
+
+```text
+pending
+confirmed
+cancelled
+```
+
+## Main project flow
+
+```text
+User performs an action in React
+|
+v
+Axios sends a request
+|
+v
+Express route receives it
+|
+v
+Authentication checks the token if required
+|
+v
+Controller performs the logic
+|
+v
 Mongoose reads or updates MongoDB
-      ↓
-API response
-      ↓
-React updates the interface
+|
+v
+Backend returns a response
+|
+v
+React updates the screen
 ```
 
 ## Authentication
 
-Passwords are hashed with bcrypt before being stored in MongoDB. After login, the backend issues a JWT. The frontend stores the token in `localStorage` and includes it with protected requests, while authentication middleware verifies the token and identifies the current user.
+When a user registers, bcrypt hashes the password before MongoDB stores it.
 
-## Booking Logic
+When the user logs in, the backend returns a JWT token. The frontend stores it in localStorage and sends it with protected requests.
 
-Before creating a booking, the backend:
+The authentication middleware verifies the token and identifies the user.
 
-1. Validates the pickup and return dates.
-2. Confirms that the requested car exists and is available.
-3. Prevents overlapping reservations.
-4. Calculates the rental duration and final price.
-5. Creates the booking with a `pending` status.
+## Booking logic
 
-## Image Handling
+The backend:
 
-Multer receives uploaded vehicle images, and ImageKit stores them in the cloud. MongoDB saves the returned image URL rather than the complete file. The frontend displays a fallback image when an image is missing or unavailable.
+- Validates pickup and return dates
+- Confirms the car exists
+- Checks that it is available
+- Prevents overlapping bookings
+- Calculates the number of days
+- Calculates the final price
+- Creates the booking as pending
 
-## Shared State
+## Image handling
 
-`AppContext.jsx` provides shared access to the authenticated user, login token, owner status, cars, currency, booking dates, Axios instance, and login-dialog state through `useAppContext()`.
+Multer receives uploaded images.
 
-## Deployment and CI
+ImageKit stores them online and returns an image URL. MongoDB stores that URL instead of the complete image.
 
-The frontend and backend are deployed separately on Vercel. Environment variables provide the MongoDB connection, JWT secret, ImageKit credentials, backend URL, and currency setting.
+If an image is missing or broken, the frontend uses a backup image.
 
-The GitHub Actions workflow checks the frontend build and linting and verifies backend dependency installation whenever code is pushed.
+## Shared state
+
+AppContext.jsx shares:
+
+```text
+user
+login token
+owner status
+cars
+currency
+booking dates
+Axios
+login popup state
+```
+
+Components access this data using:
+
+```text
+useAppContext()
+```
+
+## Deployment
+
+The frontend and backend are deployed separately on Vercel.
+
+Environment variables contain:
+
+- MongoDB connection
+- JWT secret
+- ImageKit keys
+- Backend URL
+- Currency
+
+The GitHub CI workflow automatically checks the frontend build, linting, and backend dependency installation when code is pushed.
