@@ -6,7 +6,7 @@ This is a full-stack car-rental website where customers can browse and book cars
 
 <img width="1280" height="720" alt="Luxury Car Renting Site home page" src="https://github.com/user-attachments/assets/9cee33b3-10f3-4395-bce2-fade63cadc3c" />
 
-
+<br>
 
 There are two parts:
 
