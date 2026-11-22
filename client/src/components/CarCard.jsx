@@ -2,6 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 import { fallbackCarImage, handleCarImageError } from '../utils/carImage'
+import { formatPrice } from '../utils/formatPrice'
 
 const CarCard = ({car}) => {
 
@@ -22,7 +23,7 @@ const CarCard = ({car}) => {
         {car.isAvaliable && <p className='absolute top-4 left-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-emerald-950/20'>Available Now</p>}
 
         <div className='absolute bottom-4 right-4 rounded-lg bg-asphalt/90 px-3 py-2 text-white shadow-lg backdrop-blur-sm'>
-            <span className='font-semibold'>{currency}{car.pricePerDay}</span>
+            <span className='font-semibold'>{currency}{formatPrice(car.pricePerDay)}</span>
             <span className='text-sm text-white/80'> / day</span>
         </div>
       </div>

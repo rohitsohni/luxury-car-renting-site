@@ -4,6 +4,7 @@ import Title from '../../components/owner/Title'
 import { useAppContext } from '../../context/AppContext'
 import toast from 'react-hot-toast'
 import { fallbackCarImage, handleCarImageError } from '../../utils/carImage'
+import { formatPrice } from '../../utils/formatPrice'
 
 const ManageCars = () => {
 
@@ -93,7 +94,7 @@ const ManageCars = () => {
                 </td>
 
                 <td className='p-3 max-md:hidden'>{car.category}</td>
-                <td className='p-3'>{currency}{car.pricePerDay}/day</td>
+                <td className='p-3'>{currency}{formatPrice(car.pricePerDay)}/day</td>
 
                 <td className='p-3 max-md:hidden'>
                   <button

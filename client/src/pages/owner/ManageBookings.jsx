@@ -3,6 +3,7 @@ import Title from '../../components/owner/Title'
 import { useAppContext } from '../../context/AppContext'
 import toast from 'react-hot-toast'
 import { fallbackCarImage, handleCarImageError } from '../../utils/carImage'
+import { formatPrice } from '../../utils/formatPrice'
 
 const ManageBookings = () => {
 
@@ -68,7 +69,7 @@ const ManageBookings = () => {
                   {booking.pickupDate.split('T')[0]} to {booking.returnDate.split('T')[0]}
                 </td>
 
-                <td className='p-3'>{currency}{booking.price}</td>
+                <td className='p-3'>{currency}{formatPrice(booking.price)}</td>
 
                 <td className='p-3 max-md:hidden'>
                   <span className='bg-gray-100 px-3 py-1 rounded-full text-xs'>offline</span>
