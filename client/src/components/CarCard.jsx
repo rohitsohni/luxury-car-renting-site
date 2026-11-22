@@ -6,7 +6,7 @@ import { formatPrice } from '../utils/formatPrice'
 
 const CarCard = ({car}) => {
 
-    const currency = import.meta.env.VITE_CURRENCY
+    const currency = import.meta.env.VITE_CURRENCY || "₹"
     const navigate = useNavigate()
 
   return (

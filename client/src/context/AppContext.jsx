@@ -34,7 +34,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children })=>{
 
     const navigate = useNavigate()
-    const currency = import.meta.env.VITE_CURRENCY
+    const currency = import.meta.env.VITE_CURRENCY || "₹"
 
     const [token, setToken] = useState(null)
     const [user, setUser] = useState(null)
