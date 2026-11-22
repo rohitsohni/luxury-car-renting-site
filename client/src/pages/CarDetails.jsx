@@ -6,6 +6,7 @@ import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
 import { motion as Motion } from 'motion/react'
 import { fallbackCarImage, handleCarImageError } from '../utils/carImage'
+import { formatPrice } from '../utils/formatPrice'
 
 const isMongoObjectId = (value) => /^[a-f\d]{24}$/i.test(value)
 
@@ -132,7 +133,7 @@ const CarDetails = () => {
 
           onSubmit={handleSubmit} className='h-max sticky top-18 rounded-lg border border-borderColor bg-white p-6 space-y-6 text-gray-500 shadow-[0_22px_60px_rgba(17,24,39,0.12)]'>
 
-            <p className='flex items-center justify-between text-2xl text-asphalt font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per day</span></p> 
+            <p className='flex items-center justify-between text-2xl text-asphalt font-semibold'>{currency}{formatPrice(car.pricePerDay)}<span className='text-base text-gray-400 font-normal'>per day</span></p> 
 
             <hr className='border-borderColor my-6'/>
 

@@ -5,6 +5,7 @@ import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
 import { motion as Motion } from 'motion/react'
 import { fallbackCarImage, handleCarImageError } from '../utils/carImage'
+import { formatPrice } from '../utils/formatPrice'
 
 const MyBookings = () => {
 
@@ -88,7 +89,7 @@ const MyBookings = () => {
            <div className='md:col-span-1 flex flex-col justify-between gap-6'>
               <div className='text-sm text-gray-500 text-right'>
                 <p>Total Price</p>
-                <h1 className='text-2xl font-semibold text-primary'>{currency}{booking.price}</h1>
+                <h1 className='text-2xl font-semibold text-primary'>{currency}{formatPrice(booking.price)}</h1>
                 <p>Booked on {booking.createdAt.split('T')[0]}</p>
               </div>
            </div>
